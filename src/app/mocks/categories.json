@@ -1,0 +1,34 @@
+{
+  "product_categories":[
+    {
+      "id": 1,
+      "name": "String Instruments",
+      "slug": "string-instruments",
+      "parent": 0,
+      "description": "Instruments that have strings",
+      "display": "default",
+      "image": "",
+      "count": 2
+    },
+    {
+      "id": 2,
+      "name": "Bass Guitars",
+      "slug": "bass-guitars",
+      "description": "Guitars that play low notes",
+      "parent": 1,
+      "display": "default",
+      "image": "",
+      "count": 1
+    },
+    {
+      "id": 3,
+      "name": "Guitars",
+      "slug": "guitars",
+      "parent": 1,
+      "description": "Guitars that play guitar notes",
+      "display": "default",
+      "image": "",
+      "count": 1
+    }
+  ]
+}

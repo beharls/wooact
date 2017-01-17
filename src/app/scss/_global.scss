@@ -1,0 +1,46 @@
+/* variables */
+$heading-font: 'Lato', sans-serif;
+$body-font: 'Playfair Display', serif;
+
+$primary-color: #222222;
+$link-color:#3c747d;
+$link-color-hover:#5aadbb;
+$link-color-2: #add8e6;
+$link-color-2-hover: #5aadbb;
+
+
+/* global styles */
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  font-family: $body-font;
+  color: $primary-color;
+}
+
+body, h1, h2, h3 {
+  font-weight: 300;
+  font-family: $heading-font;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+main {
+  margin-top:3.4em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+}

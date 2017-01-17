@@ -1,0 +1,43 @@
+#product-details {
+  display: flex;
+  #images {
+    flex:1;
+  }
+  #main-image {
+    width: 400px;
+    height:400px;
+  }
+  #thumbnails {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    &>div {
+      flex:1;
+      width:200px;
+      height:200px;
+    }
+  }
+  #summary {
+    flex:3;
+  }
+  .add-to-cart {
+    margin: 2em 0;
+    input, button {
+      padding:0.4em;
+      font-size: 1.4em;
+    }
+    input {
+      margin-right: 0.2em;
+      width: 2.6em;
+    }
+    button {
+    }
+  }
+  #description {
+    margin: 2em 0;
+    &>div {
+      padding: 1em;
+      border: 1px solid #eeeeee;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "products": [
+    {
+      "title": "Acoustic Guitar",
+      "slug": "acoustic-guitar",
+      "type": "simple",
+      "regular_price": "799.99",
+      "description": "Impress your friends by serenading them with beautiful music. Anyway here's wonderwall.",
+      "short_description": "Does guitar things.",
+      "featured": true,
+      "in_stock":true,
+      "categories": [
+        1,2
+      ],
+      "images": [
+        {
+          "src": "/app/mocks/images/acoustic-guitar.jpg",
+          "alt": "Acoustic Guitar Front",
+          "position": 0
+        },
+        {
+          "src": "/app/mocks/images/acoustic-guitar-back.jpg",
+          "alt": "Acoustic Guitar Back",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "title": "Electric Guitar",
+      "slug": "electric-guitar",
+      "type": "simple",
+      "regular_price": "1299.99",
+      "description": "Come on make some noise! Buy an amp and rock out.",
+      "short_description": "Does guitar things when you plug it in to an amp.",
+      "featured": true,
+      "in_stock":false,
+      "categories": [
+        1,2
+      ],
+      "images": [
+        {
+          "src": "/app/mocks/images/electric-guitar.jpg",
+          "position": 0
+        }
+      ]
+    },
+    {
+      "title": "Bass",
+      "slug": "bass-guitar",
+      "type": "simple",
+      "regular_price": "599.99",
+      "description": "Have you always wanted to be the glue that added cohesion to the whole project and not be acknowledged for it? Here's your chance!",
+      "short_description": "Does guitar things, but an octave lower.",
+      "featured": false,
+      "in_stock":true,
+      "categories": [
+        1,
+        3
+      ],
+      "images": [
+        {
+          "src": "/app/mocks/images/bass-guitar.jpg",
+          "position": 0
+        },
+        {
+          "src": "/app/mocks/images/bass-guitar.jpg",
+          "position": 1
+        }
+      ]
+    }
+  ]
+}

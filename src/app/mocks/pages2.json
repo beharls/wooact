@@ -1,0 +1,34 @@
+{
+  "pages": [
+    {
+      "title": "About Us",
+      "slug": "about-us",
+      "type": "page",
+      "content": "<h3>Why an SPA?</h3><p>You can now integrate a woocommerce instance in your existing React App.</p><p>Furthermore, there is potential to integrate your store into your React Native iOS/Android app</p><h3>Why Woocommerce</h3><p>I wanted a commonly used platform with as much easily/cheaply available API functionality as possible</p>"
+    },
+    {
+      "title": "Contact Us",
+      "slug": "contact-us",
+      "type": "page",
+      "content": "<p>Todo: put a contact form here</p>"
+    },
+    {
+      "title": "Homepage Content",
+      "slug": "homepage-content",
+      "type": "page",
+      "content": "<h3>CMS Content</h3><p>Hey, it's WordPress CMS page content in the homepage! Use a page component anywhere and include the slug as a \"slug\" prop</p><p>Even though WordPress sanitizes its pages/posts, there is an extra layer of santitation.</p><p>Here's an injection <script>doMaliciousStuff()</script>, and another one.<span onclick=\"doMoreMaliciousStuff()\"></span></p>"
+    },
+    {
+      "title": "Test Page",
+      "slug": "test-page",
+      "type": "page",
+      "content": "<p>This is a test page</p>"
+    },
+    {
+      "title": "Test Injection",
+      "slug": "test-injection",
+      "type": "page",
+      "content": "<script>doMaliciousStuff()</script><span onclick=\"doMoreMaliciousStuff()\"></span>"
+    }
+  ]
+}

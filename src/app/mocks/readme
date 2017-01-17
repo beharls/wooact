@@ -1,0 +1,4 @@
+This is a rough mock of the API responses. It will get deleted once it's talking to an actual WooCommerce + WordPress API.
+
+I would normally set up the API first, but I'm going to be using the react part as a code sample and need it out ASAP.
+Also, it's easy to pull and run the app this way.
