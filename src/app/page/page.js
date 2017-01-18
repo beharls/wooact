@@ -12,29 +12,34 @@ export class Page extends Component {
     /**
      * @todo Filter server-side once I switch to real API
      */
+    const slug = this.props.slug || this.props.location.pathname.substring(1);
+    const url = `http://woonode.dev:1337/pages/${slug}`;
+    let title;
+    let content;
     util
-      .get('app/mocks/pages.json')
+      .get(url)
       .then(response => {
-        const selectedPage = response.data.pages.find(page =>
-          (this.props.location && page.slug === this.props.location.pathname.substring(1)) ||
-          (this.props.slug && page.slug === this.props.slug));
-        const content = util.sanitize(selectedPage.content);
-        this.setState({page: selectedPage});
-        this.setState({pageContent: content});
-      });
+        title = response.data.title.rendered;
+        content = util.sanitize(response.data.content.rendered);
+        // This would be an excellent use case for all, but axios doesn't support it.
+        this.setState({title});
+        this.setState({content});
+      }).catch(() => {
+        title = "Page Not Found";
+        content = "404. Maybe you meant to go somewhere else.";
+        this.setState({title});
+        this.setState({content});
+      }
+    );
   }
 
   render() {
     return (
       <div className="page">
         {!this.props.hideTitle &&
-          <h1>{this.state.page ? this.state.page.title : "Page Not Found"}</h1>
+          <h1>{this.state.title}</h1>
         }
-        {/* @todo limited rendering of html (safe tags like h1,h2,p,div,img,etc) */}
-      {this.state.page ?
-        <article dangerouslySetInnerHTML={{__html: this.state.pageContent}}/> :
-        <p>404. Maybe you meant to go somewhere else.</p>
-      }
+        <article dangerouslySetInnerHTML={{__html: this.state.content}}/>
       </div>
     );
   }
