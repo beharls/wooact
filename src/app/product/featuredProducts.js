@@ -1,22 +1,24 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import Loader from 'react-loader';
+import {ErrorMessage} from '../shared/errorMessage';
+import util from '../util';
+import config from '../config';
 
 import {ProductSummary} from '../product/productSummary';
 
 export class FeaturedProducts extends Component {
   constructor() {
     super();
-    this.state = {products: []};
+    this.state = {products: [], error: null, loaded: false};
   }
 
   componentDidMount() {
-    axios
-      .get('app/mocks/products.json')
+    util
+      .get(`${config.wooUrl}products/featured`)
       .then(response => {
-        const featuredProducts = response.data.products.filter(
-          product => product.featured
-        );
-        this.setState({products: featuredProducts});
+        this.setState({products: response.data, loaded: true});
+      }).catch(err => {
+        this.setState({error: err, loaded: true});
       });
   }
 
@@ -24,11 +26,14 @@ export class FeaturedProducts extends Component {
     return (
       <div id="featured-products" className="container">
         <h3>Featured Products</h3>
-        <div className="products-container">
-        {this.state.products.map((product, i) => (
-          <ProductSummary key={i} product={product}/>
-        ))}
-        </div>
+        <Loader loaded={this.state.loaded}>
+          <div className="products-container">
+            {this.state.products.map((product, i) => (
+              <ProductSummary key={i} product={product}/>
+            ))}
+          </div>
+          <ErrorMessage component="Featured Products" message={this.state.error}/>
+        </Loader>
       </div>
     );
   }

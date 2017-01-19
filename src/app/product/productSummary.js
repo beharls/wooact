@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import util from '../util';
 
 export class ProductSummary extends Component {
-
-  componentDidMount() {
-    /**
-     * @todo Filter server-side once I switch to real API
-     */
-  }
 
   render() {
     return (
@@ -19,9 +14,9 @@ export class ProductSummary extends Component {
             <img src={this.props.product.images[0].src}/>}
           </section>
           <section className="summary">
-            <p>{this.props.product.title}</p>
+            <p>{this.props.product.name}</p>
             <p className="price">
-              {this.props.product.regular_price}
+              {util.getPrice(this.props.product.salesPrice, this.props.product.price)}
             </p>
           </section>
         </div>
